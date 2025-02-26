@@ -19,8 +19,7 @@ conn.send(b"Welcome to server")
 
 while True:
     data = conn.recv(4096)
-    print(data.decode())
-    if is_client_connection_closed(data.decode()):
+    if not data:
         break
     conn.send(data.upper())
 
