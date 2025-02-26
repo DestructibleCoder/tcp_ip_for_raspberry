@@ -7,7 +7,7 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-#define SERVER_IP "37.72.81.145"
+#define SERVER_IP "127.0.0.1"
 
 constexpr int DEFAILT_PORT{8080};
 constexpr char EXIT_CHAR{'#'};
