@@ -9,7 +9,7 @@
 
 #define SERVER_IP "127.0.0.1"
 
-constexpr int DEFAILT_PORT{8080};
+constexpr int DEFAULT_PORT{8080};
 constexpr char EXIT_CHAR{'#'};
 constexpr int MAX_BUFFER_SIZE{4096};
 
@@ -25,7 +25,7 @@ int main(int argc, const char *argv[]) {
     exit(0);
   }
 
-  server_addres.sin_port = htons(DEFAILT_PORT);
+  server_addres.sin_port = htons(DEFAULT_PORT);
   server_addres.sin_family = AF_INET;
   inet_pton(AF_INET, SERVER_IP, &server_addres.sin_addr);
 
@@ -34,7 +34,7 @@ int main(int argc, const char *argv[]) {
   if (connect(client, reinterpret_cast<const struct sockaddr *>(&server_addres),
               sizeof(server_addres)) == 0) {
     std::cout << "=> Connection server " << inet_ntoa(server_addres.sin_addr)
-              << "with port number " << DEFAILT_PORT << "\n";
+              << "with port number " << DEFAULT_PORT << "\n";
   }
 
   char buffer[MAX_BUFFER_SIZE];

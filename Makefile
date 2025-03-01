@@ -1,7 +1,4 @@
-all: server client
-
-server: 
-	c++ server.cpp -o server -w
+all: client
 
 client:
 	c++ client.cpp -o client -w
